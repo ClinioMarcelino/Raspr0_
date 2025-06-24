@@ -3,21 +3,22 @@ package com.Raspr0_.Application.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
+import lombok.Data;
 
 @Entity
 @Table(name = "devices")
-public class Device {
+@Data
+public class DeviceModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String model;
     private String version;
-    private int    serialNumber;
+    private Long    serialNumber;
 
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "user_id")
     @JsonBackReference
-    private User user;
+    private UserModel user;
 }

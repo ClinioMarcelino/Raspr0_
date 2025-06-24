@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Raspr0Application {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(Raspr0Application.class, args);
+
 	}
 
 }
