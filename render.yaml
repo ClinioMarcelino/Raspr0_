@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: raspr0
-    env: docker
-    plan: free
-    dockerfilePath: ./Dockerfile
-    autoDeploy: true
