@@ -1,11 +1,11 @@
 services:
   - type: web
     name: Raspr0
-    env: java
+    env: docker
     region: oregon
-    plan: free
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/Raspr0_-0.0.1-SNAPSHOT.jar
+    plan: starter
+    branch: main
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: JDBC_DATABASE_URL
         fromDatabase:
@@ -20,4 +20,3 @@ services:
           name: raspr0-db
           property: password
     autoDeploy: true
-    branch: main
